@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>군인</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+      var rank = ["민간인", "이등병" , "일병", "상병", "병장"];
+      var dday = ["D-592", "D-500", "D-400", "D-200", "D-50"];
+      function getImage(i){
+        document.querySelector('img').src = i+'.jpeg';
+      }
+      function changeInfo(i){
+        document.getElementById('main').innerHTML = "이름 신지헌"+"<br>계급 "+rank[i]+"<br>전역 "+dday[i];
+      }
+      var i = 0;
+    </script>
+  </head>
+  <body>
+    <h1>신지헌의 삶</h1>
+    <div id="grid">
+      <img width="200px" height="266px" >
+      <script>
+        getImage(0);
+      </script>
+      <div class="info">
+        <p id="main">
+          <script>
+            changeInfo(i);
+          </script>
+        </p>
+      </div>
+    </div>
+    <h2><input style ="width: 50px; height:25px; font-size:15px"
+          type="button" value="입대" onclick="
+            if(i < 4){
+              i += 1;
+              this.value = '진급'
+              getImage(i);
+              changeInfo(i);
+              }
+            if (i === 4){
+              this.value = '재입대';
+              changeInfo(i);
+              getImage(i);
+              i = 0;
+            }
+          "></h2>
+    <h2>군경력</h2>
+    <ul>
+      <li>2018.10.08 논산 28연대 2대대 5중대 2소대 입대</li>
+      <li>2018.11.15 66사단 군수지원대대 지원통제과 전입</li>
+      <li>2018.12 탈모인 선임에게 성게로 대가리쳐 모발이식해준다 선언</li>
+      <li>2019.2  일병 진급 후 위아래 망각</li>
+      <li>2019.9  상병 진급 부조리 시작</li>
+      <li>2020.2  병장 조기진급 이후 마음의편지를 두려워하며 생활</li>
+      <li>2020.4  코로나사태로 인한 조기전역 ㄱㅇㄷ</li>
+    </ul>
+    <h2><a href="after.html">전역후 행보 보러가기</a></h>
+    <h2><a href="index.html">난 뭘까 가기</a></h2>
+  </body>
+</html>
